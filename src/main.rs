@@ -3,7 +3,9 @@
 // mod types;
 // mod strings;
 // mod tup;
-mod arr;
+// mod arr;
+// mod vectors;
+mod cond;
 
 fn main() {
     // print::run();
@@ -11,5 +13,7 @@ fn main() {
     // types::run();
     // strings::run();
     // tup::run();
-    arr::run();
+    // arr::run();
+    // vectors::run();
+    cond::run();
 }
