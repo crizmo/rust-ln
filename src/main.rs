@@ -5,7 +5,13 @@
 // mod tup;
 // mod arr;
 // mod vectors;
-mod cond;
+// mod cond;
+// mod loops;
+// mod funct;
+// mod poi_ref;
+// mod structs;
+// mod enums;
+mod cli;
 
 fn main() {
     // print::run();
@@ -15,5 +21,11 @@ fn main() {
     // tup::run();
     // arr::run();
     // vectors::run();
-    cond::run();
+    // cond::run();
+    // loops::run();
+    // funct::run();
+    // poi_ref::run();
+    // structs::run();
+    // enums::run();
+    cli::run();
 }
