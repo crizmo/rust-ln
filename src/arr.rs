@@ -1,3 +1,5 @@
+use std::mem;
+
 pub fn run() {
     let mut numbers: [i32; 5] = [1, 2, 3, 4, 5];
     println!("{:?}", numbers);
