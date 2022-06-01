@@ -1,4 +1,4 @@
-pub fn run() {
+pub fn main() {
     let name = "Kurizu";
     let mut age = 27;
     println!("My name is {0}, {0} is {1} years old", name, age);

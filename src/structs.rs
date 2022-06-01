@@ -33,7 +33,7 @@ impl Person {
     }
 }
 
-pub fn run() {
+pub fn main() {
     let mut c = Color {
         red: 255,
         green: 0,

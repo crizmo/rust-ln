@@ -1,4 +1,4 @@
-pub fn run() {
+pub fn main() {
     let mut str = String::from("Hello World"); // mutable string
     println!("{}", str);
     str = String::from("Kurizu");

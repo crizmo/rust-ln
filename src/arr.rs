@@ -1,6 +1,6 @@
 use std::mem;
 
-pub fn run() {
+pub fn main() {
     let mut numbers: [i32; 5] = [1, 2, 3, 4, 5];
     println!("{:?}", numbers);
 

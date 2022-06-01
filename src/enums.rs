@@ -14,7 +14,7 @@ fn move_avatar(m: Movement) {
     }
 }
 
-pub fn run() {
+pub fn main() {
     let avatar1 = Movement::Left;
     let avatar2 = Movement::Right;
     move_avatar(avatar1);
