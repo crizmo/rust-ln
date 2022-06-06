@@ -1,4 +1,4 @@
-pub fn main() {
+ fn main() {
     greeting("Hi", "Kurizu");
     let get_sum = add(1, 2);
     println!("Sum: {}", get_sum);

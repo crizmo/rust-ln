@@ -1,4 +1,4 @@
-pub fn main() {
+ fn main() {
     let age = 19;
     let check_id = true;
     let knows_person_age = true;

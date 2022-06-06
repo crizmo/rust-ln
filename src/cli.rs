@@ -1,7 +1,7 @@
 use std::env;
 use std::io::stdin;
 
-pub fn main() {
+ fn main() {
     let arg: Vec<String> = env::args().collect();
     let command = arg[1].clone();
 

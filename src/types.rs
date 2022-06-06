@@ -26,7 +26,7 @@ Primitive types:
 
 // Rust is a statically typed language.
 
-pub fn main() {
+ fn main() {
     let x = 1;
     // Default x as a variable of type i32.
 
