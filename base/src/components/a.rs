@@ -1,5 +1,19 @@
 #[no_mangle]
-pub extern "C" fn a(x: i32) -> u32 {
-    println!("Hello from Rust in a.rs and x is {}", x);
-    0 // Return a default value of 0
+pub extern "C" fn a() {
+    
+    // let a = 1;
+    // print!("a: {}\n", a);
+    // let a = 2;
+    // print!("a: {}\n", a);
+
+    // let mut a = 1;
+    // print!("a: {}\n", a);
+    // a = 2;
+    // print!("a: {}\n", a);
+
+    let x = 1;
+    print!("a: {}\n", x);
+    let x = x + 5;
+    print!("a: {}\n", x);
+
 }

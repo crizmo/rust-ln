@@ -1,5 +1,7 @@
 #[no_mangle]
-pub extern "C" fn b(x: i32) -> u32 {
-    println!("Hello from Rust in b.rs");
-    x as u32
+pub extern "C" fn b() {
+    let mut b = 1;
+    print!("a: {}\n", b);
+    b = 2;
+    print!("a: {}\n", b);
 }
