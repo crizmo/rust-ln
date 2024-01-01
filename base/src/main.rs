@@ -1,33 +1,31 @@
 extern crate dlopen;
-#[macro_use]
-extern crate dlopen_derive;
-use dlopen::wrapper::{Container, WrapperApi};
-
-#[derive(WrapperApi)]
-struct Api {
-    a: fn(arg: i32) -> u32,
-    b: fn(arg: i32) -> u32,
-}
+use dlopen::symbor::{Library, Symbol};
+use std::io::{self, Write};
 
 fn main() {
-    let cont: Container<Api> =
-        unsafe { Container::load("libmain.so") }.expect("Could not open library or load symbols");
+    let lib = { Library::open("libmain.so") }.expect("Could not open library");
 
-    println!("Enter the function name (a, b, c, etc.):");
+    print!("Please enter the name of the function to call: ");
+    io::stdout().flush().unwrap(); // Make sure the prompt is immediately visible
+
     let mut input = String::new();
-    std::io::stdin().read_line(&mut input).expect("Failed to read input");
-    let function_name = input.trim();
+    io::stdin().read_line(&mut input).expect("Failed to read line");
+    let input = input.trim();
 
-    match function_name {
-        "a" => {
-            let _ = cont.a(42);
+    let symbol: Result<Symbol<unsafe extern "C" fn(i32) -> u32>, _> = unsafe { lib.symbol(input) };
+    let func = match symbol {
+        Ok(symbol) => {
+            let func = symbol;
+            Ok(Some(func))
         }
-        "b" => {
-            let _ = cont.b(42);
+        Err(_) => Err("No such function"),
+    };
+
+    match func {
+        Ok(Some(func)) => {
+            unsafe { func(5) };
         }
-        _ => {
-            println!("Unknown function name");
-        }
+        Ok(None) => println!("Function pointer is null"),
+        Err(_) => println!("No such function: {}", input),
     }
 }
-
