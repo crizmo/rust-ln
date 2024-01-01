@@ -6,7 +6,7 @@ fn main() {
     let lib = { Library::open("libmain.so") }.expect("Could not open library");
 
     print!("Please enter the name of the function to call: ");
-    io::stdout().flush().unwrap(); // Make sure the prompt is immediately visible
+    io::stdout().flush().unwrap(); 
 
     let mut input = String::new();
     io::stdin().read_line(&mut input).expect("Failed to read line");
